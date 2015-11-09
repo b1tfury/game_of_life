@@ -41,6 +41,10 @@ module GameOfLife
       it 'should live if two of its neighbours are alive' do
         expect(cell.survive?(create_neighbours(2))).to eq(true)
       end
+
+      it 'should live if three of its neighbours are alive' do
+        expect(cell.survive?(create_neighbours(3))).to eq(true)
+      end
     end
   end
 end

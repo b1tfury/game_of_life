@@ -31,7 +31,7 @@ module GameOfLife
       if self.is_alive?
         if count <= 1
           false
-        elsif count == 2
+        elsif count == 2 || count == 3
           true
         end
       end
