@@ -8,7 +8,7 @@ module GameOfLife
 
     def ==(other)
       if other.is_a?(self.class)
-        true
+        other.locations == self.locations
       else
         false
       end
