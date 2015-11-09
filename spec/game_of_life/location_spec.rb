@@ -28,5 +28,14 @@ module GameOfLife
         expect(location1 == location2).to eq(location2 == location1)
       end
     end
+
+    context 'adjacent locations' do
+      location = Location.new(1, 1)
+      locations = [Location.new(1, 2), Location.new(2, 2), Location.new(2, 1), Location.new(2, 0), Location.new(1, 0), Location.new(0, 0),
+                   Location.new(0, 1), Location.new(0, 2)]
+      it 'should have 8 neighbouring locations' do
+        expect(location.adjacent_locations).to match_array(locations)
+      end
+    end
   end
 end
