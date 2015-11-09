@@ -28,5 +28,6 @@ module GameOfLife
         false
       end
     end
+
   end
 end

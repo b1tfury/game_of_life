@@ -16,11 +16,11 @@ module GameOfLife
         expect(location1).to eq(location2)
       end
 
-      it 'should not be equal if other location hash different co ordinates' do
+      it 'should not be equal if other location has different co ordinates' do
         expect(location1).not_to eq(location3)
       end
 
-      it 'should not be compared with soemthing other than location' do
+      it 'should not be compared with something other than location' do
         expect(location1).not_to eq(obj)
       end
 
@@ -31,8 +31,9 @@ module GameOfLife
 
     context 'adjacent locations' do
       location = Location.new(1, 1)
-      locations = [Location.new(1, 2), Location.new(2, 2), Location.new(2, 1), Location.new(2, 0), Location.new(1, 0), Location.new(0, 0),
-                   Location.new(0, 1), Location.new(0, 2)]
+      locations = [Location.new(1, 2), Location.new(2, 2), Location.new(2, 1), Location.new(2, 0), Location.new(1, 0),
+                   Location.new(0, 0), Location.new(0, 1), Location.new(0, 2)]
+
       it 'should have 8 neighbouring locations' do
         expect(location.adjacent_locations).to match_array(locations)
       end

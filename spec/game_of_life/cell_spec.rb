@@ -11,7 +11,7 @@ module GameOfLife
         i -= 1
       end
       while j >= 1 do
-        neighbours <<  Cell.new_dead_cell
+        neighbours << Cell.new_dead_cell
         j -=  1
       end
       neighbours
@@ -27,7 +27,7 @@ module GameOfLife
       end
     end
 
-    context 'survivability conditions  of a live cell to next generation' do
+    context 'survivability conditions of a live cell to next generation' do
       cell = Cell.new_alive_cell
 
       it 'should die if none of its neighbour are alive' do
@@ -53,11 +53,12 @@ module GameOfLife
 
     context 'survivability conditions for a dead cell to next generation' do
       cell = Cell.new_dead_cell
+      
       it 'should become live if exactly three of its neighbours are alive' do
         expect(cell.survive?(create_neighbours(3))).to eq(true)
       end
 
-      it 'should remain dead in all other scenarios ' do
+      it 'should remain dead in all other scenarios' do
         expect(cell.survive?(create_neighbours(1))).to eq(false)
       end
     end

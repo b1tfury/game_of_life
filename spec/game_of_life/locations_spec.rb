@@ -1,4 +1,4 @@
-require  'spec_helper'
+require 'spec_helper'
 
 module GameOfLife
   describe Locations do
@@ -20,10 +20,10 @@ module GameOfLife
       ans
     end
 
+    it 'adjacent locations should give adjacent locations of all the locations' do
       locations1 = Locations.new(locations)
-      it 'adjacent locations should give adjacent locations of all the locations' do
-        expect(locations1.adjacent_locations).to match_array(build_adj_locations(locations))
-      end
+      expect(locations1.adjacent_locations).to match_array(build_adj_locations(locations))
+    end
 
     context 'equality' do
       locations1 = Locations.new(locations)
