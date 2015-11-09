@@ -23,6 +23,10 @@ module GameOfLife
       it 'should not be compared with soemthing other than location' do
         expect(location1).not_to eq(obj)
       end
+
+      it 'should satisfies symmetric property' do
+        expect(location1 == location2).to eq(location2 == location1)
+      end
     end
   end
 end
