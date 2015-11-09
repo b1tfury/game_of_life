@@ -5,6 +5,14 @@ module GameOfLife
       @state = state
     end
 
+    def self.new_alive_cell
+      self.new('ALIVE')
+    end
+
+    def self.new_dead_cell
+      self.new('DEAD')
+    end
+
     def is_alive?
       @state == 'ALIVE'
     end
