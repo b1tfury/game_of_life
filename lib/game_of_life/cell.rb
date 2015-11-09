@@ -33,6 +33,8 @@ module GameOfLife
           false
         elsif count == 2 || count == 3
           true
+        elsif count > 3
+          false
         end
       end
     end
