@@ -8,6 +8,10 @@ module GameOfLife
       location3 = Location.new(2, 3)
       obj = Object.new
 
+      it 'should be equal to itself' do
+        expect(location1).to eq(location1)
+      end
+
       it 'should be equal to other location with same co ordinates' do
         expect(location1).to eq(location2)
       end
