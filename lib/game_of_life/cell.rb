@@ -21,8 +21,18 @@ module GameOfLife
       @state == 'DEAD'
     end
 
-    def survive?()
+    def survive?(neighbours)
+      count = 0
+      neighbours.each do |cell|
+        if cell.is_alive?
+          count += 1
+        end
+      end
+      if self.is_alive?
+        if count == 1
           false
+        end
+      end
     end
   end
 end
