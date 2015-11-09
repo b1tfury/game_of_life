@@ -9,7 +9,7 @@ module GameOfLife
     end
 
     def ==(other)
-      true
+      self.x == other.x && self.y == self.y
     end
   end
 end
