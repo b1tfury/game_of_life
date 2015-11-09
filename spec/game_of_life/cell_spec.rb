@@ -29,6 +29,11 @@ module GameOfLife
 
     context 'next generation of live cell' do
       cell = Cell.new_alive_cell
+
+      it 'should die if none of its neighbour are alive' do
+        expect(cell.survive?(create_neighbours(0))).to eq(false)
+      end
+
       it 'should die if only one of neighbour is alive' do
         expect(cell.survive?(create_neighbours(1))).to eq(false)
       end

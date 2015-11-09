@@ -29,7 +29,7 @@ module GameOfLife
         end
       end
       if self.is_alive?
-        if count == 1
+        if count <= 1
           false
         end
       end
