@@ -50,5 +50,12 @@ module GameOfLife
         expect(cell.survive?(create_neighbours(5))).to eq(false)
       end
     end
+
+    context 'survivability conditions for a dead cell to next generation' do
+      cell = Cell.new_dead_cell
+      it 'should become live if exactly three of its neighbours are alive' do
+        expect(cell.survive?(create_neighbours(3))).to eq(true)
+      end
     end
+  end
 end

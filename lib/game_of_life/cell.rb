@@ -36,6 +36,11 @@ module GameOfLife
         elsif count > 3
           false
         end
+      elsif self.is_dead?
+        if count == 3
+          true
+        end
+
       end
     end
   end
